@@ -1,0 +1,4 @@
+pcap_file=$1
+csv_name=$2
+
+tshark -r $pcap_file -T fields -e ip.src -e ip.dst -e tcp.ack -e tcp.analysis.ack_lost_segment -e tcp.analysis.ack_rtt -e tcp.analysis.bytes_in_flight -e tcp.analysis.duplicate_ack -e tcp.analysis.fast_retransmission -e tcp.analysis.initial_rtt -e tcp.analysis.keep_alive -e tcp.analysis.keep_alive_ack -e tcp.analysis.lost_segment -e tcp.analysis.out_of_order -e tcp.analysis.push_bytes_sent -e tcp.analysis.retransmission -e tcp.analysis.rto -e tcp.analysis.rto_frame -e tcp.analysis.spurious_retransmission -e tcp.analysis.window_full -e tcp.analysis.window_update -e tcp.analysis.zero_window -e tcp.flags.syn -e tcp.flags.fin -e tcp.flags.push -e tcp.flags.reset -e tcp.flags.urg -e tcp.len -e tcp.window_size -e tcp.time_delta -E header=y -E separator=, -E quote=d -E occurrence=f > $csv_name
