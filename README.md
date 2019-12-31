@@ -1,2 +1,4 @@
 # TCP_Connection_Analysis
 Analyzes TCP connections to find contributing factors to half-closed connections, which occur when a TCP reset is sent after a TCP FIN/ACK. This topic is important because TCP resets can be forged and used in network attacks. Uses zero inflated negative binomial models and regression trees.
+
+I worked on this project with two classmates, and my individual contribution was primarily the TCP_data_cleaning.R script and the poisson_models.R script. These two scripts assemble the relevant features from data collected using Wireshark software into tabular format and fits several GLMs to analyze relevant predictors. Findings from this analysis is compared to feature importance plots generated from the regression trees and random forest classification models, which my partners wrote.
